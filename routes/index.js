@@ -8,13 +8,13 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Quiz' });
 });
 
-// GET quizes/question
-router.get('/quizes/question', quizController.question);
-// GET quizes/answer
-router.get('/quizes/answer',   quizController.answer);
+// Definición de rutas de /quizes
+router.get('/quizes',                      quizController.index);
+router.get('/quizes/:quizId(\\d+)',        quizController.show);
+router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
 
-// GET quizes/author
-router.get('/quizes/author',   function(req, res) {
+// GET /author
+router.get('/author',   function(req, res) {
   res.render('author', { title: 'Author' });
 });
 
